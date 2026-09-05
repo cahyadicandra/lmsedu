@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Asalink Edu</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "on-primary-container": "#d1d8ff",
+        "tertiary-fixed": "#dde1ff",
+        "inverse-primary": "#b7c4ff",
+        "surface-container-lowest": "#ffffff",
+        "on-tertiary": "#ffffff",
+        "surface-bright": "#faf8ff",
+        "secondary-fixed-dim": "#b7c4ff",
+        "on-secondary": "#ffffff",
+        "danger": "#EF4444",
+        "on-tertiary-container": "#d2d8ff",
+        "primary-fixed": "#dde1ff",
+        "border-subtle": "#E2E7F3",
+        "secondary": "#4158af",
+        "error": "#ba1a1a",
+        "warning": "#F59E0B",
+        "text-caption": "#9FA6BC",
+        "surface-variant": "#dde1fc",
+        "error-container": "#ffdad6",
+        "surface-container-high": "#e4e7ff",
+        "chart-track": "#CAD6F7",
+        "primary-container": "#3e58b8",
+        "on-secondary-fixed": "#001452",
+        "on-primary-fixed": "#001452",
+        "surface-tint": "#3d57b7",
+        "tertiary": "#1b3bac",
+        "secondary-container": "#8aa1fd",
+        "on-tertiary-fixed-variant": "#1a3aab",
+        "on-error-container": "#93000a",
+        "on-primary-fixed-variant": "#213e9e",
+        "surface-container": "#ebedff",
+        "inverse-on-surface": "#eff0ff",
+        "secondary-fixed": "#dde1ff",
+        "inverse-surface": "#2a2f44",
+        "background": "#faf8ff",
+        "on-surface-variant": "#444652",
+        "surface-container-highest": "#dde1fc",
+        "on-tertiary-fixed": "#001355",
+        "on-secondary-container": "#18338a",
+        "outline": "#757684",
+        "on-surface": "#161b2e",
+        "on-error": "#ffffff",
+        "outline-variant": "#c5c5d4",
+        "primary-fixed-dim": "#b7c4ff",
+        "primary": "#223f9f",
+        "on-secondary-fixed-variant": "#274096",
+        "surface-card": "#FFFFFF",
+        "surface-dim": "#d5d9f4",
+        "success": "#22C55E",
+        "surface-container-low": "#f3f2ff",
+        "on-background": "#161b2e",
+        "on-primary": "#ffffff",
+        "text-muted": "#737A90",
+        "canvas-bg": "#EBF0FA",
+        "tertiary-fixed-dim": "#b8c3ff",
+        "tertiary-container": "#3a55c5",
+        "surface": "#faf8ff"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-md": "1rem",
+        "space-xxs": "0.25rem",
+        "space-2xl": "2rem",
+        "space-sm": "0.75rem",
+        "space-3xl": "2.5rem",
+        "space-xl": "1.5rem",
+        "space-lg": "1.25rem",
+        "space-xs": "0.5rem",
+        "sidebar-expanded": "12.5rem",
+        "gutter-grid": "1.25rem",
+        "sidebar-rail": "4.5rem"
+      },
+      "fontFamily": {
+        "headline-lg-mobile": ["Plus Jakarta Sans"],
+        "body-sm": ["Plus Jakarta Sans"],
+        "headline-lg": ["Plus Jakarta Sans"],
+        "caption": ["Inter"],
+        "body-md": ["Plus Jakarta Sans"],
+        "display-metric": ["Plus Jakarta Sans"],
+        "headline-md": ["Plus Jakarta Sans"],
+        "label-md": ["Inter"],
+        "title-sm": ["Plus Jakarta Sans"],
+        "label-sm": ["Inter"]
+      },
+      "fontSize": {
+        "headline-lg-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+        "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+        "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+        "caption": ["11px", {"lineHeight": "14px", "fontWeight": "400"}],
+        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+        "display-metric": ["32px", {"lineHeight": "38px", "fontWeight": "700"}],
+        "headline-md": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+        "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+        "title-sm": ["15px", {"lineHeight": "22px", "fontWeight": "600"}],
+        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}]
+      }
+    }
+  }
+}</script></head><body class="bg-canvas-bg font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 bottom-0 w-72 bg-primary-container z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 min-h-0"><div class="h-16 px-space-lg flex items-center gap-space-sm"><img alt="Asalink Edu Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UZG1lqU0gaad7nZDQFmzceYWWU98_huh2xnpvP9wxvrLaRCDU2MIqwhO9yfz8h-L0fBd2PJ1Kpvj6IgEZhHiXSsTJTVC3NxFOFWleTurbmJFIEFlIdS_21mgUpOOPUZNPrWtyshL7UZ4Tf0CHWvcZVqE3-wbg2EqW4tVDA60Tv4ZH-3dR3abBhclJAh3QygymdHVTaMWSR6XaTGe21eLb7agNe2HvXJhGMmFOGkLS84HnQ0X0FnJa2ootR"/><span class="font-headline-md text-headline-md font-bold text-on-primary tracking-tight">Asalink Edu</span></div><nav class="flex-1 flex flex-col gap-space-xxs pl-space-md py-space-md overflow-y-auto" data-active-classes="bg-canvas-bg text-primary-container font-semibold rounded-l-full shadow-sm"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-all bg-canvas-bg text-primary-container font-semibold rounded-l-full shadow-sm" data-path="dashboard" href="#"><span class="material-symbols-outlined text-xl">dashboard</span><span class="font-title-sm text-title-sm">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-primary-container hover:text-on-primary transition-all rounded-l-full" data-path="materi-and-modul" href="#"><span class="material-symbols-outlined text-xl">menu_book</span><span class="font-title-sm text-title-sm">Materi &amp; Modul</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-primary-container hover:text-on-primary transition-all rounded-l-full" data-path="jadwal-and-sesi" href="#"><span class="material-symbols-outlined text-xl">calendar_month</span><span class="font-title-sm text-title-sm">Jadwal &amp; Sesi</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-primary-container hover:text-on-primary transition-all rounded-l-full" data-path="challenges" href="#"><span class="material-symbols-outlined text-xl">emoji_events</span><span class="font-title-sm text-title-sm">Challenges</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-primary-container hover:text-on-primary transition-all rounded-l-full" data-path="leaderboard" href="#"><span class="material-symbols-outlined text-xl">leaderboard</span><span class="font-title-sm text-title-sm">Leaderboard</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-primary-container hover:text-on-primary transition-all rounded-l-full" data-path="project-kelompok" href="#"><span class="material-symbols-outlined text-xl">group_work</span><span class="font-title-sm text-title-sm">Project Kelompok</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-primary-container hover:text-on-primary transition-all rounded-l-full" data-path="pengaturan" href="#"><span class="material-symbols-outlined text-xl">settings</span><span class="font-title-sm text-title-sm">Pengaturan</span></a></nav></div><div class="p-space-lg"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-primary-container hover:text-on-primary transition-colors" data-path="logout" href="#"><span class="material-symbols-outlined text-xl">logout</span><span class="font-title-sm text-title-sm">Keluar</span></a></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-card/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center flex-1 max-w-lg"><div class="relative w-full"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-text-muted text-lg">search</span><input class="w-full pl-10 pr-space-md py-2 bg-canvas-bg rounded-full text-on-surface font-body-sm text-body-sm placeholder:text-text-muted outline-none focus:ring-1 focus:ring-primary-container" placeholder="Cari materi, tugas, atau tantangan..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="flex items-center bg-canvas-bg rounded-full p-1"><span class="px-space-xs py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold">ID</span><span class="px-space-xs py-0.5 rounded-full text-text-muted font-label-sm text-label-sm">EN</span></div><button class="relative p-2 rounded-full text-on-surface-variant hover:bg-canvas-bg transition-colors"><span class="material-symbols-outlined text-xl">chat_bubble</span></button><button class="relative p-2 rounded-full text-on-surface-variant hover:bg-canvas-bg transition-colors"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-danger"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAmTg-lScXYNwriRRvGKHx5GW19BuSi8E8CnR2tR8JefvjFYaFEJmWIoSwLu0SG3JpGbZ1pno4YcRIi8zECYB-wFimrIuIGimtO_uoYKe-TDKP4_HAhjXkVq7wbCr3Mx8tGxz0xNHz-97__OqUoAvGPs25YB7yyj7CrfQIRC-Iik9UD08n8w17YlP_6cViFUTMVYl80rVHUYz9Mjjb6DtNVXtSR59ecCpMrWeY04t771aF_ZTpQGRlig"/><div class="hidden md:flex flex-col text-left"><span class="font-title-sm text-title-sm font-semibold text-on-surface leading-tight">Nadia Kirana</span><span class="font-caption text-caption text-text-muted leading-tight">Batch 4 - Web Dev</span></div></div></div></header><main class="w-full pt-16 bg-canvas-bg min-h-screen p-space-lg"><div class="flex flex-col w-full gap-space-lg pb-space-3xl">
+<!-- Top Breadcrumb & Status Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md text-text-muted">Dashboard</span>
+<span class="material-symbols-outlined text-text-muted text-sm">chevron_right</span>
+<span class="font-label-md text-label-md font-semibold text-primary">Overview Siswa</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-success animate-pulse"></span>
+        Status Pembelajaran: Aktif (Minggu ke-6)
+      </span>
+<div class="flex items-center gap-1 bg-surface-card px-space-sm py-1 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-warning text-base" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">14 Hari Runtun</span>
+</div>
+</div>
+</div>
+<!-- Primary Workspace Grid (8-col Left Hub / 4-col Right Rail) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT LEARNING HUB (xl:col-span-8) -->
+<div class="xl:col-span-8 flex flex-col gap-space-lg">
+<!-- 1. Welcome Hero Banner Card -->
+<div class="relative overflow-hidden rounded-[20px] bg-gradient-to-r from-primary-container via-secondary to-primary-container p-space-xl text-on-primary shadow-md">
+<!-- Subtle ambient circle blur inside -->
+<div class="absolute -right-16 -top-20 w-80 h-80 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-12 -bottom-16 w-60 h-60 rounded-full bg-tertiary-container/30 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="flex-1 space-y-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-sm py-0.5 rounded-full bg-white/15 backdrop-blur-md text-on-primary font-label-sm text-label-sm tracking-wide uppercase font-semibold">
+                Batch 4 • Level Menengah
+              </span>
+<span class="px-space-xs py-0.5 rounded-full bg-warning/20 text-warning font-label-sm text-label-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">bolt</span> Fast-track
+              </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-white font-bold tracking-tight">
+              Halo Nadia! 👋
+            </h1>
+<p class="font-body-md text-body-md text-on-primary-container max-w-lg leading-relaxed">
+              Kamu memiliki <span class="text-white font-semibold underline decoration-warning/50 decoration-2">3 tantangan baru</span> dan <span class="text-white font-semibold">1 sesi mentoring</span> sore ini. Tetap konsisten dan tingkatkan progres belajarmu!
+            </p>
+<div class="pt-space-xs flex flex-wrap items-center gap-space-sm">
+<a class="inline-flex items-center gap-space-xs px-space-lg py-2.5 rounded-full bg-surface-card text-primary font-label-md text-label-md font-semibold shadow-sm hover:shadow-md hover:bg-surface-bright transition-all transform hover:-translate-y-0.5" href="#tugas-sesi">
+<span class="material-symbols-outlined text-base">play_arrow</span>
+<span>Tinjau Tugas &amp; Sesi</span>
+</a>
+<a class="inline-flex items-center gap-space-xs px-space-md py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-label-md text-label-md font-medium transition-colors" href="#modul">
+<span class="material-symbols-outlined text-base">folder_open</span>
+<span>Buka Modul Terakhir</span>
+</a>
+</div>
+</div>
+<!-- Graphic Representation on Right -->
+<div class="w-full md:w-56 flex-shrink-0 flex justify-center">
+<div class="relative w-48 h-40 bg-white/10 backdrop-blur-sm rounded-2xl p-space-sm flex flex-col justify-between shadow-inner">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+</div>
+<span class="font-caption text-caption text-white/70">React &amp; Next.js</span>
+</div>
+<div class="flex items-center justify-center my-auto">
+<div class="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center text-white shadow-lg animate-bounce">
+<span class="material-symbols-outlined text-3xl">terminal</span>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-caption font-caption text-white/80">
+<span>Progres Silabus</span>
+<span class="font-bold">78%</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-white/20 overflow-hidden">
+<div class="h-full bg-white rounded-full" style="width: 78%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. Performance Section ("Performa Belajar") -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg">
+<!-- Left Sub-card: Dual-tone Bar Chart -->
+<div class="md:col-span-7 bg-surface-card rounded-[20px] p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<span class="font-caption text-caption uppercase tracking-wider text-text-muted font-semibold">Evaluasi Komprehensif</span>
+<h2 class="font-title-sm text-title-sm text-on-surface font-bold">Performa Belajar</h2>
+</div>
+<button class="inline-flex items-center gap-1 px-space-sm py-1.5 rounded-full bg-canvas-bg text-primary font-label-sm text-label-sm font-semibold hover:bg-surface-container transition-colors">
+<span>Semua Modul</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+<!-- Highlight Metric Badge -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">workspace_premium</span>
+</div>
+<div>
+<p class="font-caption text-caption text-text-muted">Skor Tertinggi</p>
+<p class="font-title-sm text-title-sm font-bold text-on-surface">JavaScript DOM</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-display-metric text-display-metric font-bold text-primary leading-none">95.4</span>
+<span class="font-caption text-caption text-success block font-semibold">+6.2% vs rata-rata</span>
+</div>
+</div>
+<!-- Dual-Tone Bar Chart Container -->
+<div class="flex flex-col gap-space-sm mt-auto">
+<div class="h-44 w-full flex items-end justify-between gap-2 pt-space-sm px-space-xs">
+<!-- Bar 1: HTML & CSS -->
+<div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
+<span class="font-label-sm text-label-sm text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">88.5</span>
+<div class="relative w-full max-w-[28px] h-32 bg-chart-track rounded-t-sm flex items-end overflow-hidden">
+<div class="w-full bg-primary-container rounded-t-sm transition-all duration-500 group-hover:bg-primary" style="height: 88.5%;"></div>
+</div>
+<span class="font-caption text-caption text-text-muted text-center truncate max-w-full">HTML/CSS</span>
+</div>
+<!-- Bar 2: JS DOM (Highest) -->
+<div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
+<span class="font-label-sm text-label-sm font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity">95.4</span>
+<div class="relative w-full max-w-[28px] h-32 bg-chart-track rounded-t-sm flex items-end overflow-hidden ring-2 ring-primary/20">
+<div class="w-full bg-primary rounded-t-sm transition-all duration-500" style="height: 95.4%;"></div>
+</div>
+<span class="font-caption text-caption font-bold text-primary text-center truncate max-w-full">JS DOM</span>
+</div>
+<!-- Bar 3: Postgres -->
+<div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
+<span class="font-label-sm text-label-sm text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">84.2</span>
+<div class="relative w-full max-w-[28px] h-32 bg-chart-track rounded-t-sm flex items-end overflow-hidden">
+<div class="w-full bg-primary-container rounded-t-sm transition-all duration-500 group-hover:bg-primary" style="height: 84.2%;"></div>
+</div>
+<span class="font-caption text-caption text-text-muted text-center truncate max-w-full">Postgres</span>
+</div>
+<!-- Bar 4: Tailwind -->
+<div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
+<span class="font-label-sm text-label-sm text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">91.0</span>
+<div class="relative w-full max-w-[28px] h-32 bg-chart-track rounded-t-sm flex items-end overflow-hidden">
+<div class="w-full bg-primary-container rounded-t-sm transition-all duration-500 group-hover:bg-primary" style="height: 91.0%;"></div>
+</div>
+<span class="font-caption text-caption text-text-muted text-center truncate max-w-full">Tailwind</span>
+</div>
+<!-- Bar 5: Next.js API -->
+<div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
+<span class="font-label-sm text-label-sm text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">82.5</span>
+<div class="relative w-full max-w-[28px] h-32 bg-chart-track rounded-t-sm flex items-end overflow-hidden">
+<div class="w-full bg-primary-container rounded-t-sm transition-all duration-500 group-hover:bg-primary" style="height: 82.5%;"></div>
+</div>
+<span class="font-caption text-caption text-text-muted text-center truncate max-w-full">Next API</span>
+</div>
+<!-- Bar 6: Git -->
+<div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
+<span class="font-label-sm text-label-sm text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">89.0</span>
+<div class="relative w-full max-w-[28px] h-32 bg-chart-track rounded-t-sm flex items-end overflow-hidden">
+<div class="w-full bg-primary-container rounded-t-sm transition-all duration-500 group-hover:bg-primary" style="height: 89.0%;"></div>
+</div>
+<span class="font-caption text-caption text-text-muted text-center truncate max-w-full">Git Flow</span>
+</div>
+</div>
+<!-- Chart Footnote / Legend -->
+<div class="flex items-center justify-between pt-space-xs text-caption font-caption text-text-muted">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-primary"></span>
+<span>Nilai Kamu</span>
+<span class="w-3 h-3 rounded bg-chart-track ml-2"></span>
+<span>Target Standar</span>
+</div>
+<span>Skala Penilaian: 0 - 100</span>
+</div>
+</div>
+</div>
+<!-- Right Sub-card: Aktivitas & Kehadiran (Donut Indicators) -->
+<div class="md:col-span-5 bg-surface-card rounded-[20px] p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<span class="font-caption text-caption uppercase tracking-wider text-text-muted font-semibold">Tingkat Ketuntasan</span>
+<h2 class="font-title-sm text-title-sm text-on-surface font-bold">Aktivitas &amp; Kehadiran</h2>
+</div>
+<span class="material-symbols-outlined text-text-muted text-lg">donut_large</span>
+</div>
+<!-- 2x2 Donut Grid -->
+<div class="grid grid-cols-2 gap-space-md my-auto">
+<!-- Donut 1: Algoritma & Logika (94%) -->
+<div class="flex flex-col items-center text-center p-space-xs rounded-xl bg-canvas-bg/50">
+<div class="relative w-16 h-16 mb-2">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<!-- Track -->
+<path class="text-chart-track" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<!-- Value 94% -->
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="94, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="font-title-sm text-title-sm font-bold text-on-surface">94%</span>
+</div>
+</div>
+<span class="font-caption text-caption font-semibold text-on-surface leading-snug">Algoritma &amp; Logika</span>
+<span class="font-caption text-[10px] text-text-muted mt-0.5">38/40 Selesai</span>
+</div>
+<!-- Donut 2: Struktur Komponen (88%) -->
+<div class="flex flex-col items-center text-center p-space-xs rounded-xl bg-canvas-bg/50">
+<div class="relative w-16 h-16 mb-2">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-chart-track" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="88, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="font-title-sm text-title-sm font-bold text-on-surface">88%</span>
+</div>
+</div>
+<span class="font-caption text-caption font-semibold text-on-surface leading-snug">Struktur Komponen</span>
+<span class="font-caption text-[10px] text-text-muted mt-0.5">22/25 Selesai</span>
+</div>
+<!-- Donut 3: Integrasi API (79%) -->
+<div class="flex flex-col items-center text-center p-space-xs rounded-xl bg-canvas-bg/50">
+<div class="relative w-16 h-16 mb-2">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-chart-track" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="79, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="font-title-sm text-title-sm font-bold text-on-surface">79%</span>
+</div>
+</div>
+<span class="font-caption text-caption font-semibold text-on-surface leading-snug">Integrasi API</span>
+<span class="font-caption text-[10px] text-text-muted mt-0.5">15/19 Selesai</span>
+</div>
+<!-- Donut 4: Kehadiran Live (98%) -->
+<div class="flex flex-col items-center text-center p-space-xs rounded-xl bg-canvas-bg/50">
+<div class="relative w-16 h-16 mb-2">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-chart-track" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-success" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="98, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="font-title-sm text-title-sm font-bold text-success">98%</span>
+</div>
+</div>
+<span class="font-caption text-caption font-semibold text-on-surface leading-snug">Kehadiran Sesi Live</span>
+<span class="font-caption text-[10px] text-text-muted mt-0.5">28/29 Sesi</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-caption font-caption text-text-muted">
+<span>Diperbarui otomatis 10 menit lalu</span>
+<span class="text-primary font-semibold cursor-pointer hover:underline">Unduh Rekap</span>
+</div>
+</div>
+</div>
+<!-- 3. Tutor & Mentor Pembimbing ("Tutor Pendamping") -->
+<div class="bg-surface-card rounded-[20px] p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-xl">psychology</span>
+<div>
+<h2 class="font-title-sm text-title-sm text-on-surface font-bold">Tutor Pendamping &amp; Mentor</h2>
+<p class="font-caption text-caption text-text-muted">Hubungi pembimbingmu bila mengalami kendala teknis atau review materi.</p>
+</div>
+</div>
+<button class="font-label-sm text-label-sm font-semibold text-primary hover:text-primary-container transition-colors">
+            Jadwalkan Konsultasi 1-on-1 →
+          </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Mentor 1: Fajar Ramadhan -->
+<div class="flex items-center justify-between p-space-md rounded-2xl bg-canvas-bg/60 hover:bg-canvas-bg transition-colors">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Portrait of an Indonesian male tech mentor wearing modern casual indigo polo shirt with glasses, gentle warm studio lighting, professional corporate edtech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv5fcDOIhGQlpqhY562HQbkq7Wh2U35lpDEiyicNtTVBj2i10loAKL2A8hT4DCy8eDTncOw4m_K_kTM_ZfZJUdpeCLBsRfe8EQ78kmIKfon1WMxj0tkmeL6UHq7gNKOgivvMWMzA6iyIBmLM0iQjdJuCcbEpZfgg6i7Uez8-YsR1LlrZpURs8Penmu9zYq4GYd_YIpdKnry5LgqomqW5TFNhg80xyGzLEYwFVZMs2HzsdZvhXz_XIvOA"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-success ring-2 ring-white"></span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h3 class="font-title-sm text-title-sm font-bold text-on-surface">Fajar Ramadhan</h3>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-primary-fixed text-on-primary-fixed">Mentor Utama</span>
+</div>
+<p class="font-caption text-caption text-text-muted">Senior Frontend Engineer @ TechCorp</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center gap-1 font-caption text-[11px] text-primary">
+<span class="material-symbols-outlined text-xs">schedule</span> Respon &lt; 15 mnt
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="w-9 h-9 rounded-full bg-surface-card hover:bg-surface-bright flex items-center justify-center text-primary-container shadow-sm transition-transform active:scale-95" title="Kirim Pesan">
+<span class="material-symbols-outlined text-lg">chat</span>
+</button>
+<button class="w-9 h-9 rounded-full bg-primary-container hover:bg-primary text-white flex items-center justify-center shadow-sm transition-transform active:scale-95" title="Panggilan Video">
+<span class="material-symbols-outlined text-lg">videocam</span>
+</button>
+</div>
+</div>
+<!-- Mentor 2: Sarah Anindita -->
+<div class="flex items-center justify-between p-space-md rounded-2xl bg-canvas-bg/60 hover:bg-canvas-bg transition-colors">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Portrait of an Indonesian female software engineer mentor in modern professional dark blue blazer with friendly welcoming smile, clean corporate edtech lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDAnF7nk_CGSyzhqSH7QF8DJQdH0Vp3oJ-NZC-twcff8jzVXkWfRs0bIOFtFyvzo0aFsiPQrRBg8OndZbHBPQnm8-WqSaZa3fojAnfp6Q8s1FYzzSY7tqtV4KtDqlSULFdayvg0WKgnUvR0GGjZPDtU7iWfRe5oYeoCIXtyCQEHz1VPYLx1GSQXkH_yznQ2FXm_K_jkizKn2zCZ43mzqrc0DZ_D7VSloPmzhHkRws0ABsVAU-9G0pbiQ"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-warning ring-2 ring-white"></span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h3 class="font-title-sm text-title-sm font-bold text-on-surface">Sarah Anindita</h3>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-variant text-on-surface-variant">Database &amp; Auth</span>
+</div>
+<p class="font-caption text-caption text-text-muted">Backend Specialist &amp; Cloud Arch</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center gap-1 font-caption text-[11px] text-text-muted">
+<span class="material-symbols-outlined text-xs">event_available</span> Sedang Mengajar
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="w-9 h-9 rounded-full bg-surface-card hover:bg-surface-bright flex items-center justify-center text-primary-container shadow-sm transition-transform active:scale-95" title="Kirim Pesan">
+<span class="material-symbols-outlined text-lg">chat</span>
+</button>
+<button class="w-9 h-9 rounded-full bg-surface-card hover:bg-surface-bright flex items-center justify-center text-text-muted shadow-sm transition-transform active:scale-95" title="Jadwalkan">
+<span class="material-symbols-outlined text-lg">calendar_add_on</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT CALENDAR & SCHEDULE RAIL (xl:col-span-4) -->
+<div class="xl:col-span-4 flex flex-col gap-space-lg">
+<!-- 4. Daily Schedule Timeline ("Jadwal Hari Ini") -->
+<div class="bg-surface-card rounded-[20px] p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-caption text-caption uppercase tracking-wider text-text-muted font-semibold">Agenda Belajar</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Jadwal Hari Ini</h2>
+</div>
+<!-- Date Pill Filter -->
+<div class="flex items-center gap-1 bg-canvas-bg px-space-sm py-1.5 rounded-full text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-sm text-primary">calendar_today</span>
+<span>5 Sep 2026</span>
+</div>
+</div>
+<!-- Weekly mini calendar strip -->
+<div class="grid grid-cols-7 gap-1 py-space-xs text-center">
+<div class="flex flex-col items-center py-1.5 rounded-xl bg-transparent text-text-muted">
+<span class="font-caption text-[10px]">Sen</span>
+<span class="font-label-sm text-label-sm font-semibold">1</span>
+</div>
+<div class="flex flex-col items-center py-1.5 rounded-xl bg-transparent text-text-muted">
+<span class="font-caption text-[10px]">Sel</span>
+<span class="font-label-sm text-label-sm font-semibold">2</span>
+</div>
+<div class="flex flex-col items-center py-1.5 rounded-xl bg-transparent text-text-muted">
+<span class="font-caption text-[10px]">Rab</span>
+<span class="font-label-sm text-label-sm font-semibold">3</span>
+</div>
+<div class="flex flex-col items-center py-1.5 rounded-xl bg-transparent text-text-muted">
+<span class="font-caption text-[10px]">Kam</span>
+<span class="font-label-sm text-label-sm font-semibold">4</span>
+</div>
+<!-- Active Today -->
+<div class="flex flex-col items-center py-1.5 rounded-xl bg-primary-container text-on-primary shadow-sm">
+<span class="font-caption text-[10px] font-medium">Jum</span>
+<span class="font-label-sm text-label-sm font-bold">5</span>
+</div>
+<div class="flex flex-col items-center py-1.5 rounded-xl bg-transparent text-text-muted">
+<span class="font-caption text-[10px]">Sab</span>
+<span class="font-label-sm text-label-sm font-semibold">6</span>
+</div>
+<div class="flex flex-col items-center py-1.5 rounded-xl bg-transparent text-text-muted">
+<span class="font-caption text-[10px]">Min</span>
+<span class="font-label-sm text-label-sm font-semibold">7</span>
+</div>
+</div>
+<!-- Timeline Items Stack -->
+<div class="relative pl-6 space-y-space-md before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-border-subtle before:border-dashed">
+<!-- Item 1: Past / Completed -->
+<div class="relative flex flex-col gap-1 text-left">
+<span class="absolute -left-6 top-1.5 w-3.5 h-3.5 rounded-full bg-success ring-4 ring-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-white">check</span>
+</span>
+<div class="flex items-center justify-between text-caption font-caption text-text-muted">
+<span>09:00 - 10:30 WIB</span>
+<span class="text-success font-medium">Selesai</span>
+</div>
+<div class="p-space-sm rounded-xl bg-canvas-bg/50">
+<h4 class="font-title-sm text-body-md font-semibold text-on-surface">Quiz Harian: Asynchronous JavaScript</h4>
+<p class="font-caption text-caption text-text-muted">Nilai: 96/100 • Tersimpan otomatis</p>
+</div>
+</div>
+<!-- Item 2: ONGOING LIVE LESSON (HIGHLIGHTED SOLID BLUE #5B75E6) -->
+<div class="relative flex flex-col gap-1 text-left">
+<span class="absolute -left-6 top-2 w-3.5 h-3.5 rounded-full bg-warning ring-4 ring-white animate-ping"></span>
+<span class="absolute -left-6 top-2 w-3.5 h-3.5 rounded-full bg-primary-container ring-4 ring-white"></span>
+<div class="flex items-center justify-between text-caption font-caption text-primary font-bold">
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-danger animate-pulse"></span>
+                SEKARANG • 14:00 - 15:30 WIB
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-danger text-white text-[10px] font-bold tracking-wider uppercase">Live Sesi 14</span>
+</div>
+<!-- Elevated Solid Blue Card -->
+<div class="p-space-md rounded-2xl bg-[#5B75E6] text-white shadow-lg space-y-space-xs">
+<div class="flex items-start justify-between">
+<div>
+<h4 class="font-title-sm text-title-sm font-bold leading-tight">Live Coding: State Management &amp; Redux</h4>
+<p class="font-caption text-caption text-blue-100 mt-0.5">Bersama Fajar Ramadhan • Zoom Room #2</p>
+</div>
+<span class="material-symbols-outlined text-white/90 text-2xl">sensors</span>
+</div>
+<p class="font-body-sm text-body-sm text-white/90 leading-normal">
+                Membahas persistensi state, reducer slice, dan middleware Redux Toolkit secara hands-on.
+              </p>
+<div class="pt-space-xs flex items-center justify-between gap-2">
+<button class="w-full py-2 px-space-md rounded-xl bg-white text-primary font-label-sm text-label-sm font-bold shadow hover:bg-surface-bright transition-transform active:scale-95 flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-base">video_camera_front</span>
+<span>Masuk Kelas Sekarang</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 3: Upcoming 1 -->
+<div class="relative flex flex-col gap-1 text-left">
+<span class="absolute -left-6 top-1.5 w-3.5 h-3.5 rounded-full bg-outline-variant ring-4 ring-white"></span>
+<div class="flex items-center justify-between text-caption font-caption text-text-muted">
+<span>16:00 - 16:45 WIB</span>
+<span class="font-medium text-primary">Segera</span>
+</div>
+<div class="p-space-sm rounded-xl bg-canvas-bg/60 hover:bg-canvas-bg transition-colors">
+<h4 class="font-title-sm text-body-md font-semibold text-on-surface">Review Challenge UI Dashboard</h4>
+<p class="font-caption text-caption text-text-muted">Fase 3 • Feedback interaktif antarmuka siswa</p>
+</div>
+</div>
+<!-- Item 4: Upcoming 2 -->
+<div class="relative flex flex-col gap-1 text-left">
+<span class="absolute -left-6 top-1.5 w-3.5 h-3.5 rounded-full bg-outline-variant ring-4 ring-white"></span>
+<div class="flex items-center justify-between text-caption font-caption text-text-muted">
+<span>19:00 - 20:00 WIB</span>
+<span class="font-medium text-text-muted">Malam</span>
+</div>
+<div class="p-space-sm rounded-xl bg-canvas-bg/60 hover:bg-canvas-bg transition-colors">
+<h4 class="font-title-sm text-body-md font-semibold text-on-surface">Diskusi Project Kelompok Guru &amp; Siswa</h4>
+<p class="font-caption text-caption text-text-muted">Google Meet kelompok 4B • Sync progress sprint</p>
+</div>
+</div>
+</div>
+</div>
+<!-- 5. Upcoming Events & Webinar ("Agenda & Webinar Asalink") -->
+<div class="bg-surface-card rounded-[20px] p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-caption text-caption uppercase tracking-wider text-text-muted font-semibold">Pengembangan Karir</span>
+<h2 class="font-title-sm text-title-sm text-on-surface font-bold">Agenda &amp; Webinar Asalink</h2>
+</div>
+<span class="material-symbols-outlined text-primary-container text-lg">campaign</span>
+</div>
+<div class="space-y-space-sm">
+<!-- Event 1: Hackathon -->
+<div class="p-space-sm rounded-2xl bg-canvas-bg/50 hover:bg-canvas-bg transition-all flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-primary-container/10 text-primary-container flex flex-col items-center justify-center flex-shrink-0 font-bold">
+<span class="text-caption font-caption uppercase leading-tight">Sep</span>
+<span class="text-headline-md font-headline-md leading-none">12</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1 mb-0.5">
+<span class="px-1.5 py-0.2 rounded text-[10px] font-bold bg-warning/20 text-warning">Kompetisi</span>
+<span class="font-caption text-caption text-text-muted">Sabtu • 09:00</span>
+</div>
+<h4 class="font-title-sm text-body-md font-bold text-on-surface truncate">Hackathon Mini: Build EdTech Solutions</h4>
+<p class="font-caption text-caption text-text-muted line-clamp-1">Kolaborasi tim 48 jam dengan total hadiah sertifikat industri &amp; pendanaan awal.</p>
+<button class="mt-1.5 font-label-sm text-label-sm font-semibold text-primary hover:underline flex items-center gap-1">
+<span>Daftar Tim</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Event 2: Guest Lecture -->
+<div class="p-space-sm rounded-2xl bg-canvas-bg/50 hover:bg-canvas-bg transition-all flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/20 text-secondary flex flex-col items-center justify-center flex-shrink-0 font-bold">
+<span class="text-caption font-caption uppercase leading-tight">Sep</span>
+<span class="text-headline-md font-headline-md leading-none">18</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1 mb-0.5">
+<span class="px-1.5 py-0.2 rounded text-[10px] font-bold bg-success/20 text-success">Webinar Gratis</span>
+<span class="font-caption text-caption text-text-muted">Jumat • 19:30</span>
+</div>
+<h4 class="font-title-sm text-body-md font-bold text-on-surface truncate">Tech Career Roadmap with Google Engineer</h4>
+<p class="font-caption text-caption text-text-muted line-clamp-1">Strategi portofolio menonjol dan lolos interview teknis global scale.</p>
+<button class="mt-1.5 font-label-sm text-label-sm font-semibold text-primary hover:underline flex items-center gap-1">
+<span>Pasang Pengingat</span>
+<span class="material-symbols-outlined text-xs">notifications_active</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Reference Screenshot Documentation Modal / Visual Anchor -->
+<div class="pt-space-xs">
+<div class="p-space-sm rounded-xl bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-base">verified</span>
+<span class="font-caption text-caption font-semibold text-on-surface">Target Kurikulum Terverifikasi</span>
+</div>
+<span class="font-caption text-caption text-text-muted">Batch 4 Standard</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Quick Links & Project Shortcut Strip -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-space-xs">
+<div class="p-space-md rounded-[20px] bg-surface-card shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">code_blocks</span>
+</div>
+<div>
+<h4 class="font-title-sm text-title-sm font-bold text-on-surface">Repository Mini Project</h4>
+<p class="font-caption text-caption text-text-muted">Branch: main • Commit terakhir 2 jam lalu</p>
+</div>
+</div>
+<button class="p-2 rounded-full hover:bg-canvas-bg text-text-muted hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-lg">open_in_new</span>
+</button>
+</div>
+<div class="p-space-md rounded-[20px] bg-surface-card shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">forum</span>
+</div>
+<div>
+<h4 class="font-title-sm text-title-sm font-bold text-on-surface">Forum Diskusi Siswa</h4>
+<p class="font-caption text-caption text-text-muted">14 Pertanyaan baru belum terjawab</p>
+</div>
+</div>
+<button class="p-2 rounded-full hover:bg-canvas-bg text-text-muted hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-lg">chat</span>
+</button>
+</div>
+<div class="p-space-md rounded-[20px] bg-surface-card shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-variant flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">download</span>
+</div>
+<div>
+<h4 class="font-title-sm text-title-sm font-bold text-on-surface">Silabus Lengkap PDF</h4>
+<p class="font-caption text-caption text-text-muted">Modul 1 - 8 • Lengkap dengan rubrik</p>
+</div>
+</div>
+<button class="p-2 rounded-full hover:bg-canvas-bg text-text-muted hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-lg">file_download</span>
+</button>
+</div>
+</div>
+<!-- Reference Image Attachment for fidelity audit -->
+<div class="hidden">
+<img alt="Asalink Reference Workspace Layout" class="opacity-0 w-0 h-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBda81n0lBkL9nJR01fyeDhJq7boY8OFuqpIn6EPR39tvwN2901_bcBD54DYt82f77mvvn-WJrIr4aHRCqvm_yzCydncq0BX-rndqjDPhYRXKaT-kPszYjHBUm2aopYSGnsHqmsDdVg_iVxP1Ub5ko-CQOCSnzqhuqlq3D5USI-rQRc7XFicKpe8ef2IaWElcCpHjpuatRRKQn8nsTVdvv5w7GAJpEC4fUb_0MYrGrp_KHC94T2lLJpsQJseggEVAqJtrQ"/>
+</div>
+</div></main></div></body></html>

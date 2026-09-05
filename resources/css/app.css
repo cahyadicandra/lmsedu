@@ -1,0 +1,132 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+/* ─── Custom Design Tokens ──────────────────────────────── */
+@theme {
+  /* Colors */
+  --color-primary:                    #223f9f;
+  --color-primary-container:          #3e58b8;
+  --color-primary-fixed:              #dde1ff;
+  --color-primary-fixed-dim:          #b7c4ff;
+  --color-on-primary:                 #ffffff;
+  --color-on-primary-container:       #d1d8ff;
+  --color-on-primary-fixed:           #001452;
+  --color-on-primary-fixed-variant:   #213e9e;
+  --color-inverse-primary:            #b7c4ff;
+
+  --color-secondary:                  #4158af;
+  --color-secondary-container:        #8aa1fd;
+  --color-secondary-fixed:            #dde1ff;
+  --color-secondary-fixed-dim:        #b7c4ff;
+  --color-on-secondary:               #ffffff;
+  --color-on-secondary-container:     #18338a;
+  --color-on-secondary-fixed:         #001452;
+  --color-on-secondary-fixed-variant: #274096;
+
+  --color-tertiary:                   #1b3bac;
+  --color-tertiary-container:         #3a55c5;
+  --color-tertiary-fixed:             #dde1ff;
+  --color-tertiary-fixed-dim:         #b8c3ff;
+  --color-on-tertiary:                #ffffff;
+  --color-on-tertiary-container:      #d2d8ff;
+  --color-on-tertiary-fixed:          #001355;
+  --color-on-tertiary-fixed-variant:  #1a3aab;
+
+  --color-surface:                        #faf8ff;
+  --color-surface-card:                   #ffffff;
+  --color-surface-dim:                    #d5d9f4;
+  --color-surface-bright:                 #faf8ff;
+  --color-surface-tint:                   #3d57b7;
+  --color-surface-variant:                #dde1fc;
+  --color-surface-container:              #ebedff;
+  --color-surface-container-low:          #f3f2ff;
+  --color-surface-container-high:         #e4e7ff;
+  --color-surface-container-lowest:       #ffffff;
+  --color-surface-container-highest:      #dde1fc;
+  --color-on-surface:                     #161b2e;
+  --color-on-surface-variant:             #444652;
+  --color-inverse-surface:                #2a2f44;
+  --color-inverse-on-surface:             #eff0ff;
+
+  --color-canvas-bg:                  #EBF0FA;
+  --color-background:                 #faf8ff;
+  --color-on-background:              #161b2e;
+
+  --color-outline:                    #757684;
+  --color-outline-variant:            #c5c5d4;
+  --color-border-subtle:              #E2E7F3;
+
+  --color-error:                      #ba1a1a;
+  --color-error-container:            #ffdad6;
+  --color-on-error:                   #ffffff;
+  --color-on-error-container:         #93000a;
+
+  --color-danger:                     #EF4444;
+  --color-success:                    #22C55E;
+  --color-warning:                    #F59E0B;
+
+  --color-text-muted:                 #737A90;
+  --color-text-caption:               #9FA6BC;
+  --color-chart-track:                #CAD6F7;
+
+  /* Border radius */
+  --radius-DEFAULT: 0.25rem;
+  --radius-lg:      0.5rem;
+  --radius-xl:      0.75rem;
+  --radius-2xl:     1rem;
+  --radius-full:    9999px;
+
+  /* Spacing */
+  --spacing-space-xxs:         0.25rem;
+  --spacing-space-xs:          0.5rem;
+  --spacing-space-sm:          0.75rem;
+  --spacing-space-md:          1rem;
+  --spacing-space-lg:          1.25rem;
+  --spacing-space-xl:          1.5rem;
+  --spacing-space-2xl:         2rem;
+  --spacing-space-3xl:         2.5rem;
+  --spacing-sidebar-expanded:  12.5rem;
+  --spacing-sidebar-rail:      4.5rem;
+  --spacing-gutter-grid:       1.25rem;
+
+  /* Fonts */
+  --font-sans:              'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-body-md:           'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-body-sm:           'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-headline-lg:       'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-headline-md:       'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-title-sm:          'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display-metric:    'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-headline-lg-mobile:'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-caption:           'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-label-md:          'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-label-sm:          'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  /* Font sizes */
+  --text-headline-lg:        24px;
+  --text-headline-md:        18px;
+  --text-headline-lg-mobile: 20px;
+  --text-body-md:            14px;
+  --text-body-sm:            13px;
+  --text-title-sm:           15px;
+  --text-display-metric:     32px;
+  --text-label-md:           12px;
+  --text-label-sm:           11px;
+  --text-caption:            11px;
+}
+
+/* ─── Base resets ─────────────────────────────────────────── */
+@layer base {
+  html, body { margin: 0; padding: 0; }
+  body { overscroll-behavior: none; }
+  main > :first-child { margin-top: 0 !important; }
+  main > :last-child  { margin-bottom: 0 !important; }
+  ::-webkit-scrollbar { display: none; }
+}
+
+/* Alpine x-cloak */
+[x-cloak] { display: none !important; }
