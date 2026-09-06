@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex flex-col w-full gap-space-lg pb-space-3xl max-w-5xl mx-auto">
+<div class="flex flex-col w-full gap-space-lg pb-space-3xl ">
 
     {{-- Breadcrumb --}}
     <div class="flex flex-wrap items-center gap-space-sm mb-4">
@@ -84,7 +84,7 @@
                                     <p class="text-xs text-text-muted truncate">{{ basename($assignment->file_path) }}</p>
                                 </div>
                             </a>
-                            <a href="{{ Storage::url($assignment->file_path) }}" download class="p-2 ml-2 rounded-lg text-text-muted hover:text-primary hover:bg-primary/10 transition-colors shrink-0" title="Unduh Lampiran">
+                            <a href="{{ Storage::url($assignment->file_path) }}" download class="p-2 ml-2 rounded-full text-text-muted hover:text-primary hover:bg-primary/10 transition-colors shrink-0" title="Unduh Lampiran">
                                 <span class="material-symbols-outlined">download</span>
                             </a>
                         </div>
@@ -172,8 +172,8 @@
                                     <p class="text-sm text-text-muted">Apakah Anda yakin ingin mengumpulkan tugas ini? Anda mungkin tidak dapat mengubahnya lagi setelah dinilai oleh Guru.</p>
                                 </div>
                                 <div class="pt-space-md border-t border-border-subtle flex justify-end gap-2 p-space-md bg-canvas-bg/30 mt-0">
-                                    <button type="button" @click="showConfirmModal=false" class="px-4 py-2 rounded-lg text-sm font-semibold text-text-muted hover:bg-canvas-bg transition-colors">Batal</button>
-                                    <button type="button" @click="document.getElementById('submitForm').submit()" class="px-4 py-2 rounded-lg text-sm font-semibold bg-primary text-white hover:bg-primary/90 shadow-sm">Ya, Kumpulkan</button>
+                                    <button type="button" @click="showConfirmModal=false" class="px-4 py-2 rounded-full text-sm font-semibold text-text-muted hover:bg-canvas-bg transition-colors">Batal</button>
+                                    <button type="button" @click="document.getElementById('submitForm').submit()" class="px-4 py-2 rounded-full text-sm font-semibold bg-primary text-white hover:bg-primary/90 shadow-sm">Ya, Kumpulkan</button>
                                 </div>
                             </div>
                         </div>
@@ -216,3 +216,4 @@
 
 </div>
 @endsection
+

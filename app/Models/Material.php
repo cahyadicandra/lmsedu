@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Material extends Model
 {
     protected $fillable = [
-        'subject_id', 'teacher_id', 'school_class_id', 'title', 'description', 'file_path', 'published_at', 'status'
+        'subject_id', 'teacher_id', 'school_class_id', 'learning_session_id', 'title', 'description', 'file_path', 'youtube_link', 'published_at', 'status'
     ];
 
     protected $casts = [
@@ -22,5 +22,8 @@ class Material extends Model
     }
     public function schoolClass() {
         return $this->belongsTo(SchoolClass::class);
+    }
+    public function learningSession() {
+        return $this->belongsTo(LearningSession::class);
     }
 }

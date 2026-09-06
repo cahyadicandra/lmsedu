@@ -20,10 +20,10 @@
             <p class="font-body-md text-text-muted mt-1">Kelas {{ $schoolClass->name }}</p>
         </div>
         <div class="flex gap-2">
-            <button @click="showDeleteModal=true" class="bg-surface-variant text-danger hover:bg-danger/10 px-4 py-2 rounded-lg font-semibold flex items-center gap-2 transition-colors">
+            <button @click="showDeleteModal=true" class="btn-danger px-4 py-2 gap-2 text-sm">
                 <span class="material-symbols-outlined text-sm">delete</span> Hapus Kolom Nilai
             </button>
-            <button @click="showAddModal=true" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2 transition-colors shadow-sm">
+            <button @click="showAddModal=true" class="btn-primary px-4 py-2 gap-2 text-sm">
                 <span class="material-symbols-outlined text-sm">add</span> Tambah Kolom Nilai
             </button>
         </div>
@@ -134,8 +134,8 @@
                 </div>
 
                 <div class="p-space-md border-t border-border-subtle flex justify-end gap-2 bg-canvas-bg/30">
-                    <button type="button" @click="showAddModal=false" class="px-4 py-2 rounded-lg text-sm font-semibold text-text-muted hover:bg-canvas-bg transition-colors">Batal</button>
-                    <button type="submit" class="px-4 py-2 rounded-lg text-sm font-semibold bg-primary text-white hover:bg-primary/90 shadow-sm">Simpan Nilai</button>
+                    <button type="button" @click="showAddModal=false" class="btn-secondary px-4 py-2 text-sm">Batal</button>
+                    <button type="submit" class="btn-primary px-4 py-2 text-sm">Simpan Nilai</button>
                 </div>
             </form>
         </div>
@@ -167,8 +167,8 @@
                 </div>
 
                 <div class="pt-4 border-t border-border-subtle flex justify-end gap-2 mt-2">
-                    <button type="button" @click="showDeleteModal=false" class="px-4 py-2 rounded-lg text-sm font-semibold text-text-muted hover:bg-canvas-bg transition-colors">Batal</button>
-                    <button type="submit" class="px-4 py-2 rounded-lg text-sm font-semibold bg-danger text-white hover:bg-danger/90 shadow-sm" onclick="return confirm('Anda yakin ingin menghapus kolom nilai ini secara permanen?')">Hapus Permanen</button>
+                    <button type="button" @click="showDeleteModal=false" class="btn-secondary px-4 py-2 text-sm">Batal</button>
+                    <button type="submit" class="btn-danger px-4 py-2 text-sm" onclick="return confirm('Anda yakin ingin menghapus kolom nilai ini secara permanen?')">Hapus Permanen</button>
                 </div>
             </form>
         </div>

@@ -9,7 +9,7 @@
             <h1 class="font-headline-lg text-headline-lg font-bold text-on-surface">Pesan (Sticky Notes)</h1>
             <p class="font-body-md text-text-muted mt-1">Kirim catatan singkat kepada guru Anda.</p>
         </div>
-        <button @click="showModal = true" class="bg-primary hover:bg-primary/90 text-white font-semibold py-2.5 px-5 rounded-xl flex items-center gap-2 transition-colors shadow-sm">
+        <button @click="showModal = true" class="bg-primary hover:bg-primary/90 text-white font-semibold py-2.5 px-5 rounded-full flex items-center gap-2 transition-colors shadow-sm">
             <span class="material-symbols-outlined text-[18px]">edit_square</span> Tulis Pesan
         </button>
     </div>
@@ -137,7 +137,7 @@
                 @csrf
                 <div>
                     <label class="text-sm font-bold text-on-surface mb-1 block">Kepada Guru</label>
-                    <select name="teacher_id" class="input-standard w-full" required>
+                    <select name="teacher_id" class="w-full px-4 py-2.5 bg-canvas-bg border border-border-subtle rounded-full text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all cursor-pointer" required>
                         <option value="">Pilih Guru...</option>
                         @foreach($teachers as $t)
                             <option value="{{ $t->id }}">{{ $t->name }}</option>
@@ -159,3 +159,5 @@
     </div>
 </div>
 @endsection
+
+

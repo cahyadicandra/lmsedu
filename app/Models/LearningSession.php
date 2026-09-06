@@ -17,4 +17,7 @@ class LearningSession extends Model
     public function attendances() {
         return $this->hasMany(Attendance::class);
     }
+    public function materials() {
+        return $this->hasMany(Material::class);
+    }
 }

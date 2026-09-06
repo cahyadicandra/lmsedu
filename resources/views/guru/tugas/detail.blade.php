@@ -82,7 +82,7 @@
                                     @endif
                                 </td>
                                 <td class="py-3 px-space-md text-right">
-                                    <button @click="openGradeModal = true" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-primary-fixed text-on-primary-fixed hover:bg-primary hover:text-white transition-colors">
+                                    <button @click="openGradeModal = true" class="px-3 py-1.5 rounded-full text-xs font-semibold bg-primary-fixed text-on-primary-fixed hover:bg-primary hover:text-white transition-colors">
                                         Beri Nilai
                                     </button>
 
@@ -115,8 +115,8 @@
                                                     <textarea name="feedback" x-model="form.feedback" rows="2" class="w-full px-3 py-2 bg-white border border-border-subtle rounded-lg text-sm focus:ring-1 focus:ring-primary outline-none"></textarea>
                                                 </div>
                                                 <div class="pt-space-md border-t border-border-subtle flex justify-end gap-2 mt-2">
-                                                    <button type="button" @click="openGradeModal=false" class="px-4 py-2 rounded-lg text-sm font-semibold text-text-muted hover:bg-canvas-bg transition-colors">Batal</button>
-                                                    <button type="submit" class="px-4 py-2 rounded-lg text-sm font-semibold bg-primary text-white hover:bg-primary/90 shadow-sm">Simpan Nilai</button>
+                                                    <button type="button" @click="openGradeModal=false" class="px-4 py-2 rounded-full text-sm font-semibold text-text-muted hover:bg-canvas-bg transition-colors">Batal</button>
+                                                    <button type="submit" class="px-4 py-2 rounded-full text-sm font-semibold bg-primary text-white hover:bg-primary/90 shadow-sm">Simpan Nilai</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -136,3 +136,4 @@
     </div>
 </div>
 @endsection
+

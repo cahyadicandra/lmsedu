@@ -9,7 +9,7 @@
             <h1 class="font-headline-lg text-headline-lg font-bold text-on-surface">Pesan (Sticky Notes)</h1>
             <p class="font-body-md text-text-muted mt-1">Kirim pesan singkat kepada guru mengenai perkembangan anak.</p>
         </div>
-        <button @click="showModal = true" class="bg-primary hover:bg-primary/90 text-white font-semibold py-2.5 px-5 rounded-xl flex items-center gap-2 transition-colors shadow-sm">
+        <button @click="showModal = true" class="bg-primary hover:bg-primary/90 text-white font-semibold py-2.5 px-5 rounded-full flex items-center gap-2 transition-colors shadow-sm">
             <span class="material-symbols-outlined text-[18px]">edit_square</span> Tulis Pesan
         </button>
     </div>
@@ -124,7 +124,7 @@
         <span class="material-symbols-outlined text-6xl text-text-muted mb-4 opacity-30">sticky_note_2</span>
         <h3 class="text-xl font-bold text-on-surface mb-2">Belum ada pesan</h3>
         <p class="text-text-muted">Anda belum mengirimkan sticky note kepada guru.</p>
-        <button @click="showModal = true" class="btn-primary mt-6 py-2 px-6 rounded-xl font-semibold shadow-sm">
+        <button @click="showModal = true" class="btn-primary mt-6 py-2 px-6 rounded-full font-semibold shadow-sm">
             Tulis Pesan Pertama
         </button>
     </div>
@@ -166,8 +166,8 @@
                 </div>
                 
                 <div class="flex justify-end gap-3 pt-4 border-t border-border-subtle">
-                    <button type="button" @click="showModal = false" class="px-5 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl font-semibold transition-colors">Batal</button>
-                    <button type="submit" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold flex items-center gap-2 transition-colors shadow-sm">
+                    <button type="button" @click="showModal = false" class="px-5 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full font-semibold transition-colors">Batal</button>
+                    <button type="submit" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold flex items-center gap-2 transition-colors shadow-sm">
                         <span class="material-symbols-outlined text-[18px]">send</span> Kirim
                     </button>
                 </div>
@@ -177,3 +177,4 @@
 
 </div>
 @endsection
+

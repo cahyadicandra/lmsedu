@@ -36,7 +36,7 @@
             <h1 class="font-headline-lg text-headline-lg font-bold text-on-surface">Data Sekolah</h1>
             <p class="font-body-md text-text-muted mt-1">Kelola data sekolah mitra yang terdaftar dalam sistem Asalink Edu.</p>
         </div>
-        <button @click="openAddModal" class="bg-primary hover:bg-primary/90 text-white px-space-md py-2.5 rounded-lg font-semibold flex items-center gap-2 transition-colors shadow-sm">
+        <button @click="openAddModal" class="bg-primary hover:bg-primary/90 text-white px-space-md py-2.5 rounded-full font-semibold flex items-center gap-2 transition-colors shadow-sm">
             <span class="material-symbols-outlined text-sm">add</span>
             Tambah Sekolah
         </button>
@@ -73,7 +73,7 @@
                         <option value="{{ $lvl }}" {{ request('level') == $lvl ? 'selected' : '' }}>{{ $lvl }}</option>
                     @endforeach
                 </select>
-                <button type="submit" class="bg-surface-variant text-on-surface-variant hover:bg-surface-container px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                <button type="submit" class="bg-surface-variant text-on-surface-variant hover:bg-surface-container px-4 py-2 rounded-full text-sm font-semibold transition-colors">
                     Filter
                 </button>
             </form>
@@ -112,10 +112,10 @@
                         </td>
                         <td class="py-3 px-space-md text-right">
                             <div class="flex items-center justify-end gap-2">
-                                <button @click="openViewModal({{ json_encode($school) }})" class="p-1.5 text-text-muted hover:text-success hover:bg-success/10 rounded-lg transition-colors" title="Lihat">
+                                <button @click="openViewModal({{ json_encode($school) }})" class="p-1.5 text-text-muted hover:text-success hover:bg-success/10 rounded-full transition-colors" title="Lihat">
                                     <span class="material-symbols-outlined text-sm">visibility</span>
                                 </button>
-                                <button @click="openEditModal({{ json_encode($school) }})" class="p-1.5 text-text-muted hover:text-primary hover:bg-primary/10 rounded-lg transition-colors" title="Edit">
+                                <button @click="openEditModal({{ json_encode($school) }})" class="p-1.5 text-text-muted hover:text-primary hover:bg-primary/10 rounded-full transition-colors" title="Edit">
                                     <span class="material-symbols-outlined text-sm">edit</span>
                                 </button>
                                 <button @click="openDeleteModal('{{ route('data-sekolah.destroy', $school->id) }}', '{{ $school->name }}')" class="p-1.5 text-text-muted hover:text-danger hover:bg-danger/10 rounded-lg transition-colors" title="Hapus">
@@ -188,7 +188,7 @@
             </div>
             <!-- Footer -->
             <div class="p-space-md border-t border-border-subtle bg-canvas-bg/30 text-right">
-                <button @click="showViewModal = false" class="px-4 py-2 rounded-lg text-sm font-semibold bg-primary text-white hover:bg-primary/90 transition-colors shadow-sm">Tutup</button>
+                <button @click="showViewModal = false" class="px-4 py-2 rounded-full text-sm font-semibold bg-primary text-white hover:bg-primary/90 transition-colors shadow-sm">Tutup</button>
             </div>
         </div>
     </div>
@@ -256,8 +256,8 @@
                 </div>
 
                 <div class="mt-space-md pt-space-md border-t border-border-subtle flex justify-end gap-2">
-                    <button type="button" @click="showModal = false" class="px-4 py-2 rounded-lg text-sm font-semibold text-text-muted hover:bg-canvas-bg transition-colors">Batal</button>
-                    <button type="submit" class="px-4 py-2 rounded-lg text-sm font-semibold bg-primary text-white hover:bg-primary/90 transition-colors shadow-sm" x-text="isEdit ? 'Simpan Perubahan' : 'Simpan Data'"></button>
+                    <button type="button" @click="showModal = false" class="px-4 py-2 rounded-full text-sm font-semibold text-text-muted hover:bg-canvas-bg transition-colors">Batal</button>
+                    <button type="submit" class="px-4 py-2 rounded-full text-sm font-semibold bg-primary text-white hover:bg-primary/90 transition-colors shadow-sm" x-text="isEdit ? 'Simpan Perubahan' : 'Simpan Data'"></button>
                 </div>
             </form>
         </div>
@@ -275,10 +275,11 @@
             <form :action="deleteUrl" method="POST" class="flex gap-3 justify-center">
                 @csrf
                 @method('DELETE')
-                <button type="button" @click="showDeleteModal = false" class="px-5 py-2.5 rounded-lg text-sm font-semibold text-text-muted bg-surface-variant hover:bg-surface-container transition-colors flex-1">Batal</button>
-                <button type="submit" class="px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-danger hover:bg-danger/90 transition-colors shadow-sm flex-1">Ya, Hapus</button>
+                <button type="button" @click="showDeleteModal = false" class="px-5 py-2.5 rounded-full text-sm font-semibold text-text-muted bg-surface-variant hover:bg-surface-container transition-colors flex-1">Batal</button>
+                <button type="submit" class="px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-danger hover:bg-danger/90 transition-colors shadow-sm flex-1">Ya, Hapus</button>
             </form>
         </div>
     </div>
 </div>
 @endsection
+

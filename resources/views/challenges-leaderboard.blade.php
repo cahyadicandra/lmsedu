@@ -320,7 +320,7 @@
 <span class="font-label-md text-label-md font-bold text-primary-container">1,980 XP</span>
 </div>
 </div>
-<button class="mt-space-sm text-center font-label-md text-label-md text-primary-container font-semibold py-2 hover:bg-surface-container-low rounded-xl transition-colors">
+<button class="mt-space-sm text-center font-label-md text-label-md text-primary-container font-semibold py-2 hover:bg-surface-container-low rounded-full transition-colors">
           Lihat Seluruh 127 Peserta →
         </button>
 </div>
@@ -344,7 +344,7 @@
 <input class="w-full bg-white/10 placeholder-white/60 text-on-primary text-xs rounded-xl px-3 py-2.5 pr-8 outline-none focus:bg-white/20 transition-all font-body-sm" readonly="" type="text" value="Buat 1 mini-project algoritma searching dengan TypeScript"/>
 <span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-sm text-on-primary/70">auto_fix_high</span>
 </div>
-<button class="w-full py-2 bg-surface-card text-primary font-label-md text-label-md font-bold rounded-xl shadow hover:bg-surface-container-low transition-all flex items-center justify-center gap-1.5">
+<button class="w-full py-2 bg-surface-card text-primary font-label-md text-label-md font-bold rounded-full shadow hover:bg-surface-container-low transition-all flex items-center justify-center gap-1.5">
 <span>Generate Tantangan Latihan</span>
 <span class="material-symbols-outlined text-base">arrow_forward</span>
 </button>
@@ -455,3 +455,4 @@
   }
 </script>
 @endsection
+

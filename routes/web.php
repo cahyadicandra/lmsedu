@@ -38,6 +38,8 @@ Route::middleware("auth")->group(function () {
 
     // Guru - Pembelajaran
     Route::resource("pertemuan", \App\Http\Controllers\LearningSessionController::class);
+    Route::post("pertemuan/{id}/materi", [\App\Http\Controllers\LearningSessionController::class, "storeMaterial"])->name("pertemuan.materi.store");
+    Route::delete("pertemuan/materi/{materi}", [\App\Http\Controllers\LearningSessionController::class, "destroyMaterial"])->name("pertemuan.materi.destroy");
     Route::resource("tugas", \App\Http\Controllers\TeacherAssignmentController::class);
     Route::post("tugas/grade/{id}", [\App\Http\Controllers\TeacherAssignmentController::class, 'grade'])->name('tugas.grade');
     Route::resource("absensi", \App\Http\Controllers\AttendanceController::class);

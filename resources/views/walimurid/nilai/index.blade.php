@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex flex-col w-full gap-space-lg pb-space-3xl max-w-6xl mx-auto">
+<div class="flex flex-col w-full gap-space-lg pb-space-3xl ">
 
     {{-- Breadcrumb & Header --}}
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-4">
@@ -126,7 +126,7 @@
                             {{ $grade->created_at->format('d M Y') }}
                         </td>
                         <td class="py-4 px-6 text-right">
-                            <button @click="showDetail = true" class="btn-secondary py-1.5 px-3 rounded-lg text-sm flex items-center gap-1.5 ml-auto">
+                            <button @click="showDetail = true" class="btn-secondary py-1.5 px-3 rounded-full text-sm flex items-center gap-1.5 ml-auto">
                                 <span class="material-symbols-outlined text-[16px]">visibility</span> Detail
                             </button>
 
@@ -202,3 +202,4 @@
     @endif
 </div>
 @endsection
+

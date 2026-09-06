@@ -76,7 +76,7 @@
             </div>
             
             <div class="mt-8 flex justify-end">
-                <button type="submit" class="px-6 py-2.5 rounded-lg text-sm font-semibold bg-primary text-white hover:bg-primary/90 transition-colors shadow-sm flex items-center gap-2">
+                <button type="submit" class="px-6 py-2.5 rounded-full text-sm font-semibold bg-primary text-white hover:bg-primary/90 transition-colors shadow-sm flex items-center gap-2">
                     <span class="material-symbols-outlined text-[20px]">save</span> Simpan Perubahan
                 </button>
             </div>
@@ -84,3 +84,4 @@
     </div>
 </div>
 @endsection
+

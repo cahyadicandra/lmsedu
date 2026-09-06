@@ -15,8 +15,8 @@
 
     {{-- Filter Form --}}
     <form method="GET" action="{{ route('siswa.nilai.index') }}" class="flex items-center gap-3 bg-surface-card p-4 rounded-2xl border border-border-subtle shadow-sm">
-        <div class="flex-1 max-w-sm">
-            <select name="subject_id" class="input-standard w-full" onchange="this.form.submit()">
+        <div>
+            <select name="subject_id" class="min-w-[200px] sm:min-w-[280px] px-4 py-2.5 bg-canvas-bg border border-border-subtle rounded-full text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all cursor-pointer" onchange="this.form.submit()">
                 <option value="">Semua Mata Pelajaran</option>
                 @foreach($subjects as $subject)
                     <option value="{{ $subject->id }}" {{ request('subject_id') == $subject->id ? 'selected' : '' }}>
@@ -79,3 +79,4 @@
     </div>
 </div>
 @endsection
+

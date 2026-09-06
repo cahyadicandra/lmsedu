@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex flex-col w-full gap-space-lg pb-space-3xl max-w-4xl mx-auto">
+<div class="flex flex-col w-full gap-space-lg pb-space-3xl ">
 
     {{-- Breadcrumb & Header --}}
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-4">

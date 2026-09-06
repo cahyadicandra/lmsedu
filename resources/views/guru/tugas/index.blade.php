@@ -18,7 +18,7 @@
             <h1 class="font-headline-lg text-headline-lg font-bold text-on-surface">Manajemen Tugas</h1>
             <p class="font-body-md text-text-muted mt-1">Kelola pemberian tugas untuk siswa Anda.</p>
         </div>
-        <button @click="openAdd" class="bg-primary hover:bg-primary/90 text-white px-space-md py-2.5 rounded-lg font-semibold flex items-center gap-2 transition-colors shadow-sm">
+        <button @click="openAdd" class="bg-primary hover:bg-primary/90 text-white px-space-md py-2.5 rounded-full font-semibold flex items-center gap-2 transition-colors shadow-sm">
             <span class="material-symbols-outlined text-sm">add</span>Tambah Tugas
         </button>
     </div>
@@ -58,7 +58,7 @@
                 </select>
             </div>
             <div>
-                <button type="submit" class="px-4 py-2 bg-surface-variant text-text-muted hover:bg-border-subtle rounded-lg text-sm font-semibold transition-colors flex items-center gap-2">
+                <button type="submit" class="px-4 py-2 bg-surface-variant text-text-muted hover:bg-border-subtle rounded-full text-sm font-semibold transition-colors flex items-center gap-2">
                     <span class="material-symbols-outlined text-sm">filter_list</span> Filter
                 </button>
             </div>
@@ -98,10 +98,10 @@
                         </td>
                         <td class="py-3 px-space-md text-right">
                             <div class="flex items-center justify-end gap-2">
-                                <a href="{{ route('tugas.show', $s->id) }}" class="p-1.5 text-text-muted hover:text-success hover:bg-success/10 rounded-lg transition-colors" title="Lihat & Nilai">
+                                <a href="{{ route('tugas.show', $s->id) }}" class="p-1.5 text-text-muted hover:text-success hover:bg-success/10 rounded-full transition-colors" title="Lihat & Nilai">
                                     <span class="material-symbols-outlined text-sm">visibility</span>
                                 </a>
-                                <button @click="openEdit({{ json_encode($s) }})" class="p-1.5 text-text-muted hover:text-primary hover:bg-primary/10 rounded-lg transition-colors" title="Edit">
+                                <button @click="openEdit({{ json_encode($s) }})" class="p-1.5 text-text-muted hover:text-primary hover:bg-primary/10 rounded-full transition-colors" title="Edit">
                                     <span class="material-symbols-outlined text-sm">edit</span>
                                 </button>
                                 <button @click="openDelete('{{ route('tugas.destroy', $s->id) }}', '{{ addslashes($s->title) }}')" class="p-1.5 text-text-muted hover:text-danger hover:bg-danger/10 rounded-lg transition-colors">
@@ -192,8 +192,8 @@
                     </div>
                 </div>
                 <div class="pt-space-md border-t border-border-subtle flex justify-end gap-2 mt-2">
-                    <button type="button" @click="showModal=false" class="px-4 py-2 rounded-lg text-sm font-semibold text-text-muted hover:bg-canvas-bg transition-colors">Batal</button>
-                    <button type="submit" class="px-4 py-2 rounded-lg text-sm font-semibold bg-primary text-white hover:bg-primary/90 shadow-sm" x-text="isEdit ? 'Simpan Perubahan' : 'Simpan Tugas'"></button>
+                    <button type="button" @click="showModal=false" class="px-4 py-2 rounded-full text-sm font-semibold text-text-muted hover:bg-canvas-bg transition-colors">Batal</button>
+                    <button type="submit" class="px-4 py-2 rounded-full text-sm font-semibold bg-primary text-white hover:bg-primary/90 shadow-sm" x-text="isEdit ? 'Simpan Perubahan' : 'Simpan Tugas'"></button>
                 </div>
             </form>
         </div>
@@ -211,10 +211,11 @@
             <form :action="deleteUrl" method="POST" class="flex gap-3 justify-center">
                 @csrf
                 @method('DELETE')
-                <button type="button" @click="showDeleteModal = false" class="px-5 py-2.5 rounded-lg text-sm font-semibold text-text-muted bg-surface-variant hover:bg-surface-container transition-colors flex-1">Batal</button>
-                <button type="submit" class="px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-danger hover:bg-danger/90 shadow-sm flex-1">Hapus</button>
+                <button type="button" @click="showDeleteModal = false" class="px-5 py-2.5 rounded-full text-sm font-semibold text-text-muted bg-surface-variant hover:bg-surface-container transition-colors flex-1">Batal</button>
+                <button type="submit" class="px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-danger hover:bg-danger/90 shadow-sm flex-1">Hapus</button>
             </form>
         </div>
     </div>
 </div>
 @endsection
+

@@ -15,7 +15,7 @@
             <h1 class="font-headline-lg text-headline-lg font-bold text-on-surface">Pertemuan Pembelajaran</h1>
             <p class="font-body-md text-text-muted mt-1">Kelola jadwal dan data pertemuan mengajar Anda.</p>
         </div>
-        <button @click="openAdd" class="bg-primary hover:bg-primary/90 text-white px-space-md py-2.5 rounded-lg font-semibold flex items-center gap-2 transition-colors shadow-sm">
+        <button @click="openAdd" class="bg-primary hover:bg-primary/90 text-white px-space-md py-2.5 rounded-full font-semibold flex items-center gap-2 transition-colors shadow-sm">
             <span class="material-symbols-outlined text-sm">add</span>Tambah Pertemuan
         </button>
     </div>
@@ -55,77 +55,93 @@
                 </select>
             </div>
             <div>
-                <button type="submit" class="px-4 py-2 bg-surface-variant text-text-muted hover:bg-border-subtle rounded-lg text-sm font-semibold transition-colors flex items-center gap-2">
+                <button type="submit" class="px-4 py-2 bg-surface-variant text-text-muted hover:bg-border-subtle rounded-full text-sm font-semibold transition-colors flex items-center gap-2">
                     <span class="material-symbols-outlined text-sm">filter_list</span> Filter
                 </button>
             </div>
         </form>
     </div>
 
-    <div class="bg-surface-card rounded-2xl shadow-sm border border-border-subtle overflow-hidden">
-        <div class="overflow-x-auto">
-            <table class="w-full text-left border-collapse">
-                <thead>
-                    <tr class="bg-canvas-bg/50 border-b border-border-subtle">
-                        <th class="py-3 px-space-md text-xs uppercase tracking-wider text-text-muted font-semibold">Tanggal</th>
-                        <th class="py-3 px-space-md text-xs uppercase tracking-wider text-text-muted font-semibold">Mata Pelajaran</th>
-                        <th class="py-3 px-space-md text-xs uppercase tracking-wider text-text-muted font-semibold">Kelas</th>
-                        <th class="py-3 px-space-md text-xs uppercase tracking-wider text-text-muted font-semibold">Pertemuan</th>
-                        <th class="py-3 px-space-md text-xs uppercase tracking-wider text-text-muted font-semibold">Topik</th>
-                        <th class="py-3 px-space-md text-xs uppercase tracking-wider text-text-muted font-semibold">Status</th>
-                        <th class="py-3 px-space-md text-xs uppercase tracking-wider text-text-muted font-semibold text-right">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-border-subtle text-sm">
-                    @forelse($sessions as $s)
-                    <tr class="hover:bg-canvas-bg/30 transition-colors cursor-pointer" @click.self="openView({{ json_encode($s) }})">
-                        <td class="py-3 px-space-md">
-                            <span class="font-semibold text-on-surface block">{{ date('d M Y', strtotime($s->date)) }}</span>
-                            <span class="text-xs text-text-muted">{{ $s->time ? date('H:i', strtotime($s->time)) : '-' }}</span>
-                        </td>
-                        <td class="py-3 px-space-md font-semibold text-primary">{{ $s->subject->name ?? '-' }}</td>
-                        <td class="py-3 px-space-md font-medium">{{ $s->schoolClass->name ?? '-' }}</td>
-                        <td class="py-3 px-space-md"><span class="inline-flex px-2 py-0.5 rounded text-[11px] font-semibold bg-primary-fixed text-on-primary-fixed">Ke-{{ $s->meeting_number }}</span></td>
-                        <td class="py-3 px-space-md font-semibold text-on-surface truncate max-w-[200px]">{{ $s->title }}</td>
-                        <td class="py-3 px-space-md">
-                            @if($s->status === 'Berlangsung')
-                                <span class="inline-flex items-center gap-1 bg-warning/10 text-warning px-2 py-0.5 rounded text-xs font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-warning animate-pulse"></span> Berlangsung</span>
-                            @elseif($s->status === 'Selesai')
-                                <span class="inline-flex items-center gap-1 bg-success/10 text-success px-2 py-0.5 rounded text-xs font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-success"></span> Selesai</span>
-                            @else
-                                <span class="inline-flex items-center gap-1 bg-surface-container-highest text-text-muted px-2 py-0.5 rounded text-xs font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-border-subtle"></span> Belum Dimulai</span>
-                            @endif
-                        </td>
-                        <td class="py-3 px-space-md text-right">
-                            <div class="flex items-center justify-end gap-2">
-                                <a href="{{ route('pertemuan.show', $s->id) }}" class="p-1.5 text-text-muted hover:text-success hover:bg-success/10 rounded-lg transition-colors" title="Lihat">
-                                    <span class="material-symbols-outlined text-sm">visibility</span>
-                                </a>
-                                <button @click="openEdit({{ json_encode($s) }})" class="p-1.5 text-text-muted hover:text-primary hover:bg-primary/10 rounded-lg transition-colors" title="Edit">
-                                    <span class="material-symbols-outlined text-sm">edit</span>
-                                </button>
-                                <form action="{{ route('pertemuan.destroy', $s->id) }}" method="POST" class="inline" onsubmit="return confirm('Hapus pertemuan ini?')">
-                                    @csrf @method('DELETE')
-                                    <button type="submit" class="p-1.5 text-text-muted hover:text-danger hover:bg-danger/10 rounded-lg transition-colors">
-                                        <span class="material-symbols-outlined text-sm">delete</span>
-                                    </button>
-                                </form>
-                            </div>
-                        </td>
-                    </tr>
-                    @empty
-                    <tr><td colspan="7" class="py-8 text-center text-text-muted">
-                        <div class="flex flex-col items-center gap-2">
-                            <span class="material-symbols-outlined text-4xl text-border-subtle">calendar_month</span>
-                            <p>Belum ada data pertemuan.</p>
-                        </div>
-                    </td></tr>
-                    @endforelse
-                </tbody>
-            </table>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+        @php
+            // Using explicit hex colors to bypass Tailwind JIT compilation limitations
+            $themes = [
+                ['color' => '#3b82f6', 'bg' => '#eff6ff', 'border' => '#bfdbfe'], // blue
+                ['color' => '#10b981', 'bg' => '#ecfdf5', 'border' => '#a7f3d0'], // emerald
+                ['color' => '#8b5cf6', 'bg' => '#f5f3ff', 'border' => '#ddd6fe'], // purple
+                ['color' => '#ec4899', 'bg' => '#fdf2f8', 'border' => '#fbcfe8'], // pink
+                ['color' => '#f97316', 'bg' => '#fff7ed', 'border' => '#fed7aa'], // orange
+                ['color' => '#14b8a6', 'bg' => '#f0fdfa', 'border' => '#99f6e4'], // teal
+            ];
+        @endphp
+        
+        @forelse($sessions as $s)
+        @php
+            $theme = $themes[($s->schoolClass->id ?? 0) % count($themes)];
+        @endphp
+        <div class="bg-surface-card rounded-2xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col gap-4 relative hover:-translate-y-1 duration-300"
+             style="border: 1px solid var(--color-border-subtle, #e5e7eb); border-bottom: 4px solid {{ $theme['color'] }};">
+            <div class="flex items-start justify-between">
+                <div>
+                    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg shadow-sm mb-3 transition-colors"
+                         style="background-color: {{ $theme['bg'] }}; border: 1px solid {{ $theme['border'] }}; color: {{ $theme['color'] }};">
+                        <span class="material-symbols-outlined text-[14px]">door_open</span>
+                        <span class="font-bold text-xs">{{ $s->schoolClass->name ?? '-' }}</span>
+                    </div>
+                    <h3 class="font-bold text-on-surface text-lg line-clamp-1" title="{{ $s->title }}">{{ $s->title }}</h3>
+                    <p class="text-sm text-text-muted mt-1 font-medium">{{ $s->subject->name ?? '-' }} • <span class="text-primary font-bold">Ke-{{ $s->meeting_number }}</span></p>
+                </div>
+                
+                {{-- Status Badge --}}
+                @if($s->status === 'Berlangsung')
+                    <span class="inline-flex items-center gap-1 bg-warning/10 text-warning px-2 py-1 rounded-md text-xs font-bold"><span class="w-1.5 h-1.5 rounded-full bg-warning animate-pulse"></span> Berlangsung</span>
+                @elseif($s->status === 'Selesai')
+                    <span class="inline-flex items-center gap-1 bg-success/10 text-success px-2 py-1 rounded-md text-xs font-bold"><span class="w-1.5 h-1.5 rounded-full bg-success"></span> Selesai</span>
+                @else
+                    <span class="inline-flex items-center gap-1 bg-surface-container-highest text-text-muted px-2 py-1 rounded-md text-xs font-bold"><span class="w-1.5 h-1.5 rounded-full bg-border-subtle"></span> Belum Dimulai</span>
+                @endif
+            </div>
+
+            <div class="flex items-center gap-2 text-sm text-text-muted bg-canvas-bg/50 p-2.5 rounded-xl border border-border-subtle/50">
+                <span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                <span class="font-medium">{{ date('d M Y', strtotime($s->date)) }}</span>
+                <span class="mx-1 text-border-subtle">|</span>
+                <span class="material-symbols-outlined text-[16px]">schedule</span>
+                <span class="font-medium">{{ $s->time ? date('H:i', strtotime($s->time)) : '-' }}</span>
+            </div>
+
+            <div class="pt-4 border-t border-border-subtle mt-auto flex items-center justify-between">
+                <a href="{{ route('pertemuan.show', $s->id) }}" class="text-sm font-bold text-primary hover:text-primary/80 transition-colors flex items-center gap-1">
+                    Detail Sesi <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </a>
+                
+                <div class="flex items-center gap-1">
+                    <button @click="openEdit({{ json_encode($s) }})" class="p-1.5 text-text-muted hover:text-primary hover:bg-primary/10 rounded-full transition-colors" title="Edit">
+                        <span class="material-symbols-outlined text-sm">edit</span>
+                    </button>
+                    <form action="{{ route('pertemuan.destroy', $s->id) }}" method="POST" class="inline" onsubmit="return confirm('Hapus pertemuan ini?')">
+                        @csrf @method('DELETE')
+                        <button type="submit" class="p-1.5 text-text-muted hover:text-danger hover:bg-danger/10 rounded-full transition-colors" title="Hapus">
+                            <span class="material-symbols-outlined text-sm">delete</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-        @if($sessions->hasPages())<div class="p-space-md border-t border-border-subtle">{{ $sessions->links() }}</div>@endif
+        @empty
+        <div class="col-span-full py-16 flex flex-col items-center justify-center text-center bg-surface-card rounded-2xl border border-border-subtle border-dashed">
+            <span class="material-symbols-outlined text-6xl text-border-subtle mb-4">calendar_month</span>
+            <p class="text-lg font-bold text-on-surface">Belum ada data pertemuan.</p>
+            <p class="text-text-muted text-sm mt-1">Buat pertemuan baru untuk memulai kelas Anda.</p>
+        </div>
+        @endforelse
     </div>
+    
+    @if($sessions->hasPages())
+    <div class="mt-space-md">
+        {{ $sessions->links() }}
+    </div>
+    @endif
 
     {{-- Modal Form Tambah/Edit --}}
     <div x-show="showModal" x-cloak class="fixed inset-0 z-[60] flex items-center justify-center bg-on-surface/40 backdrop-blur-sm" x-transition.opacity style="display:none">
@@ -190,11 +206,12 @@
                     </div>
                 </div>
                 <div class="pt-space-md border-t border-border-subtle flex justify-end gap-2">
-                    <button type="button" @click="showModal=false" class="px-4 py-2 rounded-lg text-sm font-semibold text-text-muted hover:bg-canvas-bg transition-colors">Batal</button>
-                    <button type="submit" class="px-4 py-2 rounded-lg text-sm font-semibold bg-primary text-white hover:bg-primary/90 shadow-sm" x-text="isEdit ? 'Simpan Perubahan' : 'Simpan Data'"></button>
+                    <button type="button" @click="showModal=false" class="px-4 py-2 rounded-full text-sm font-semibold text-text-muted hover:bg-canvas-bg transition-colors">Batal</button>
+                    <button type="submit" class="px-4 py-2 rounded-full text-sm font-semibold bg-primary text-white hover:bg-primary/90 shadow-sm" x-text="isEdit ? 'Simpan Perubahan' : 'Simpan Data'"></button>
                 </div>
             </form>
         </div>
     </div>
 </div>
 @endsection
+

@@ -53,7 +53,7 @@ class LearningSessionController extends Controller
 
     public function show($id)
     {
-        $session = LearningSession::with(['subject', 'schoolClass', 'attendances.student', 'schoolClass.students'])->findOrFail($id);
+        $session = LearningSession::with(['subject', 'schoolClass', 'attendances.student', 'schoolClass.students', 'materials'])->findOrFail($id);
         
         // Pastikan hanya guru yang mengajar mapel ini yang bisa lihat
         if ($session->subject->teacher_id !== Auth::id()) {
@@ -97,5 +97,60 @@ class LearningSessionController extends Controller
         $session->delete();
 
         return redirect()->route('pertemuan.index')->with('success', 'Pertemuan berhasil dihapus.');
+    }
+
+    public function storeMaterial(Request $request, $id)
+    {
+        $session = LearningSession::findOrFail($id);
+        
+        if ($session->subject->teacher_id !== Auth::id()) {
+            abort(403, 'Unauthorized action.');
+        }
+
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'youtube_link' => 'nullable|url',
+            'file_path' => 'nullable|file|mimes:pdf,doc,docx,ppt,pptx,xls,xlsx,zip,rar|max:10240',
+        ]);
+
+        $filePath = null;
+        if ($request->hasFile('file_path')) {
+            $file = $request->file('file_path');
+            $filename = time() . '_' . preg_replace('/[^a-zA-Z0-9_.-]/', '_', $file->getClientOriginalName());
+            $filePath = $file->storeAs('materials', $filename, 'public');
+        }
+
+        \App\Models\Material::create([
+            'learning_session_id' => $session->id,
+            'subject_id' => $session->subject_id,
+            'school_class_id' => $session->school_class_id,
+            'teacher_id' => Auth::id(),
+            'title' => $request->title,
+            'description' => $request->description,
+            'youtube_link' => $request->youtube_link,
+            'file_path' => $filePath,
+            'published_at' => now(),
+            'status' => 'Aktif',
+        ]);
+
+        return redirect()->back()->with(['success' => 'Materi berhasil ditambahkan.', 'tab' => 'materi']);
+    }
+
+    public function destroyMaterial($id)
+    {
+        $material = \App\Models\Material::findOrFail($id);
+        
+        if ($material->teacher_id !== Auth::id()) {
+            abort(403, 'Unauthorized action.');
+        }
+
+        if ($material->file_path) {
+            \Illuminate\Support\Facades\Storage::disk('public')->delete($material->file_path);
+        }
+
+        $material->delete();
+
+        return redirect()->back()->with(['success' => 'Materi berhasil dihapus.', 'tab' => 'materi']);
     }
 }

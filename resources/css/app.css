@@ -130,3 +130,19 @@
 
 /* Alpine x-cloak */
 [x-cloak] { display: none !important; }
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-white font-semibold rounded-full transition-colors shadow-sm inline-flex items-center justify-center;
+  }
+  .btn-secondary {
+    @apply bg-surface-container-high hover:bg-surface-variant text-on-surface font-semibold rounded-full transition-colors inline-flex items-center justify-center;
+  }
+  .btn-danger {
+    @apply bg-danger hover:bg-danger/90 text-white font-semibold rounded-full transition-colors shadow-sm inline-flex items-center justify-center;
+  }
+  .input-standard {
+    @apply w-full px-4 py-2.5 bg-canvas-bg border border-border-subtle rounded-2xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all;
+  }
+}
+

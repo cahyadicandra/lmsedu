@@ -86,7 +86,7 @@
 
             <div class="flex justify-end gap-3 pt-space-md border-t border-border-subtle">
                 <a href="{{ route('pertemuan.show', $session->id) }}" class="px-4 py-2 rounded-lg text-sm font-semibold text-text-muted hover:bg-canvas-bg transition-colors">Batal</a>
-                <button type="submit" class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors shadow-sm">
+                <button type="submit" class="px-4 py-2 bg-primary text-white rounded-full text-sm font-semibold hover:bg-primary/90 transition-colors shadow-sm">
                     Simpan Absensi
                 </button>
             </div>
@@ -94,3 +94,4 @@
     </div>
 </div>
 @endsection
+

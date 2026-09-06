@@ -20,7 +20,7 @@
             <p class="text-text-muted text-sm mt-1">Guru: {{ $subject->teacher->name ?? 'Belum Ditentukan' }}</p>
         </div>
         <div class="flex gap-2">
-            <a href="{{ route('siswa.materi.index', ['subject_id' => $subject->id]) }}" class="btn-primary py-2 px-4 text-sm bg-primary/10 text-primary border-none hover:bg-primary/20">Lihat Semua Materi</a>
+            <a href="{{ route('siswa.materi.index', ['subject_id' => $subject->id]) }}" class="btn-primary py-2 px-4 text-sm ">Lihat Semua Materi</a>
             <a href="{{ route('siswa.tugas.index', ['subject_id' => $subject->id]) }}" class="btn-primary py-2 px-4 text-sm bg-warning/10 text-warning border-none hover:bg-warning/20">Lihat Semua Tugas</a>
         </div>
     </div>
@@ -120,3 +120,4 @@
     </div>
 </div>
 @endsection
+

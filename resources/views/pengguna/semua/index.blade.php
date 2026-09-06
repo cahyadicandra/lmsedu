@@ -14,7 +14,7 @@
             <h1 class="font-headline-lg text-headline-lg font-bold text-on-surface">Semua Pengguna</h1>
             <p class="font-body-md text-text-muted mt-1">Daftar seluruh pengguna terdaftar di sekolah ini.</p>
         </div>
-        <button @click="openAdd" class="bg-primary hover:bg-primary/90 text-white px-space-md py-2.5 rounded-lg font-semibold flex items-center gap-2 transition-colors shadow-sm">
+        <button @click="openAdd" class="bg-primary hover:bg-primary/90 text-white px-space-md py-2.5 rounded-full font-semibold flex items-center gap-2 transition-colors shadow-sm">
             <span class="material-symbols-outlined text-sm">person_add</span>Tambah Pengguna
         </button>
     </div>
@@ -38,7 +38,7 @@
                     <option value="Guru" {{ request('role') === 'Guru' ? 'selected' : '' }}>Guru</option>
                     <option value="Siswa" {{ request('role') === 'Siswa' ? 'selected' : '' }}>Siswa</option>
                 </select>
-                <button type="submit" class="bg-surface-variant text-on-surface-variant hover:bg-surface-container px-4 py-2 rounded-lg text-sm font-semibold transition-colors">Filter</button>
+                <button type="submit" class="bg-surface-variant text-on-surface-variant hover:bg-surface-container px-4 py-2 rounded-full text-sm font-semibold transition-colors">Filter</button>
             </form>
         </div>
         <div class="overflow-x-auto">
@@ -86,11 +86,11 @@
                         <td class="py-3 px-space-md text-text-muted text-xs">{{ $usr->created_at->format('d M Y') }}</td>
                         <td class="py-3 px-space-md text-right">
                             <div class="flex items-center justify-end gap-2">
-                                <button @click="openView({{ json_encode($usr) }})" class="p-1.5 text-text-muted hover:text-success hover:bg-success/10 rounded-lg transition-colors"><span class="material-symbols-outlined text-sm">visibility</span></button>
-                                <button @click="openEdit({{ json_encode($usr) }})" class="p-1.5 text-text-muted hover:text-primary hover:bg-primary/10 rounded-lg transition-colors"><span class="material-symbols-outlined text-sm">edit</span></button>
+                                <button @click="openView({{ json_encode($usr) }})" class="p-1.5 text-text-muted hover:text-success hover:bg-success/10 rounded-full transition-colors"><span class="material-symbols-outlined text-sm">visibility</span></button>
+                                <button @click="openEdit({{ json_encode($usr) }})" class="p-1.5 text-text-muted hover:text-primary hover:bg-primary/10 rounded-full transition-colors"><span class="material-symbols-outlined text-sm">edit</span></button>
                                 <form action="{{ route('semua-pengguna.destroy', $usr->id) }}" method="POST" class="inline" onsubmit="return confirm('Hapus pengguna ini?')">
                                     @csrf @method('DELETE')
-                                    <button type="submit" class="p-1.5 text-text-muted hover:text-danger hover:bg-danger/10 rounded-lg transition-colors"><span class="material-symbols-outlined text-sm">delete</span></button>
+                                    <button type="submit" class="p-1.5 text-text-muted hover:text-danger hover:bg-danger/10 rounded-full transition-colors"><span class="material-symbols-outlined text-sm">delete</span></button>
                                 </form>
                             </div>
                         </td>
@@ -133,7 +133,7 @@
                 <span class="inline-flex px-3 py-1 rounded-full text-xs font-semibold" :class="(viewData.status||'Aktif')==='Aktif'?'bg-success/20 text-success':'bg-surface-variant text-text-muted'" x-text="viewData.status||'Aktif'"></span>
             </div>
             <div class="p-space-md border-t border-border-subtle bg-canvas-bg/30 text-center">
-                <button @click="showViewModal=false" class="px-6 py-2 rounded-lg text-sm font-semibold bg-primary text-white hover:bg-primary/90">Tutup</button>
+                <button @click="showViewModal=false" class="px-6 py-2 rounded-full text-sm font-semibold bg-primary text-white hover:bg-primary/90">Tutup</button>
             </div>
         </div>
     </div>
@@ -182,11 +182,12 @@
                     <input type="password" name="password" x-model="form.password" :required="!isEdit" class="w-full px-3 py-2 bg-white border border-border-subtle rounded-lg text-sm focus:ring-1 focus:ring-primary outline-none">
                 </div>
                 <div class="pt-space-md border-t border-border-subtle flex justify-end gap-2">
-                    <button type="button" @click="showModal=false" class="px-4 py-2 rounded-lg text-sm font-semibold text-text-muted hover:bg-canvas-bg transition-colors">Batal</button>
-                    <button type="submit" class="px-4 py-2 rounded-lg text-sm font-semibold bg-primary text-white hover:bg-primary/90 shadow-sm" x-text="isEdit ? 'Simpan Perubahan' : 'Simpan Data'"></button>
+                    <button type="button" @click="showModal=false" class="px-4 py-2 rounded-full text-sm font-semibold text-text-muted hover:bg-canvas-bg transition-colors">Batal</button>
+                    <button type="submit" class="px-4 py-2 rounded-full text-sm font-semibold bg-primary text-white hover:bg-primary/90 shadow-sm" x-text="isEdit ? 'Simpan Perubahan' : 'Simpan Data'"></button>
                 </div>
             </form>
         </div>
     </div>
 </div>
 @endsection
+

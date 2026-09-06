@@ -44,7 +44,7 @@
                 </select>
             </div>
             <div>
-                <button type="submit" class="px-4 py-2 bg-surface-variant text-text-muted hover:bg-border-subtle rounded-lg text-sm font-semibold transition-colors flex items-center gap-2">
+                <button type="submit" class="px-4 py-2 bg-surface-variant text-text-muted hover:bg-border-subtle rounded-full text-sm font-semibold transition-colors flex items-center gap-2">
                     <span class="material-symbols-outlined text-sm">filter_list</span> Filter
                 </button>
             </div>
@@ -92,7 +92,7 @@
                             @endif
                         </td>
                         <td class="py-3 px-space-md text-right">
-                            <a href="{{ route('absensi.index', ['session_id' => $s->id]) }}" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-primary/10 text-primary hover:bg-primary/20 rounded-lg transition-colors">
+                            <a href="{{ route('absensi.index', ['session_id' => $s->id]) }}" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-primary/10 text-primary hover:bg-primary/20 rounded-full transition-colors">
                                 <span class="material-symbols-outlined text-sm">how_to_reg</span> Isi Absensi
                             </a>
                         </td>
@@ -112,3 +112,4 @@
     </div>
 </div>
 @endsection
+

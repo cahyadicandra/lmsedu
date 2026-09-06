@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="max-w-4xl mx-auto pb-space-3xl">
+<div class="pb-space-3xl">
 
     <div class="flex items-center gap-2 text-sm text-text-muted mb-4">
         <a href="{{ url('/') }}" class="hover:text-primary transition-colors flex items-center gap-1">
@@ -146,7 +146,7 @@
             </div>
 
             <div class="p-space-md border-t border-border-subtle bg-canvas-bg/30 flex justify-end">
-                <button type="submit" class="px-6 py-2.5 rounded-xl text-sm font-semibold bg-primary text-white hover:bg-primary/90 transition-colors shadow-sm flex items-center gap-2">
+                <button type="submit" class="px-6 py-2.5 rounded-full text-sm font-semibold bg-primary text-white hover:bg-primary/90 transition-colors shadow-sm flex items-center gap-2">
                     <span class="material-symbols-outlined text-[20px]">save</span> Simpan Perubahan
                 </button>
             </div>
@@ -155,3 +155,4 @@
 
 </div>
 @endsection
+

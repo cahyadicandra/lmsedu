@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex flex-col w-full gap-space-lg pb-space-3xl max-w-6xl mx-auto">
+<div class="flex flex-col w-full gap-space-lg pb-space-3xl ">
 
     {{-- Header Dashboard --}}
     <div class="relative overflow-hidden rounded-[20px] bg-gradient-to-r from-primary-container via-secondary to-primary-container p-space-xl text-on-primary shadow-md flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-8">

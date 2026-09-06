@@ -28,7 +28,7 @@
             <p class="text-sm text-text-muted mb-6">Kelas: {{ $s->schoolClass->name ?? '-' }}</p>
             
             <div class="mt-auto pt-4 border-t border-border-subtle flex justify-end">
-                <a href="{{ route('nilai.index', ['subject_id' => $s->id, 'school_class_id' => $s->school_class_id]) }}" class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold bg-primary text-white hover:bg-primary/90 rounded-lg transition-colors">
+                <a href="{{ route('nilai.index', ['subject_id' => $s->id, 'school_class_id' => $s->school_class_id]) }}" class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold bg-primary text-white hover:bg-primary/90 rounded-full transition-colors">
                     Kelola Nilai <span class="material-symbols-outlined text-sm">arrow_forward</span>
                 </a>
             </div>

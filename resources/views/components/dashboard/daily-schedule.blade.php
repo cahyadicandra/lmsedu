@@ -84,7 +84,7 @@
                 Membahas persistensi state, reducer slice, dan middleware Redux Toolkit secara hands-on.
               </p>
 <div class="pt-space-xs flex items-center justify-between gap-2">
-<button class="w-full py-2 px-space-md rounded-xl bg-white text-primary font-label-sm text-label-sm font-bold shadow hover:bg-surface-bright transition-transform active:scale-95 flex items-center justify-center gap-1.5">
+<button class="w-full py-2 px-space-md rounded-full bg-white text-primary font-label-sm text-label-sm font-bold shadow hover:bg-surface-bright transition-transform active:scale-95 flex items-center justify-center gap-1.5">
 <span class="material-symbols-outlined text-base">video_camera_front</span>
 <span>Masuk Kelas Sekarang</span>
 </button>
